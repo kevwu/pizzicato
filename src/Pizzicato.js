@@ -13,14 +13,12 @@
 	else
 		root.Pizzicato = root.Pz = Pizzicato;
 
-	var AudioContext = root.AudioContext || root.webkitAudioContext; 
-
-	if (!AudioContext) {
-		console.error('No AudioContext found in this environment. Please ensure your window or global object contains a working AudioContext constructor function.');
-		return;
-	}
+	var AudioContext = require("web-audio-engine").StreamAudioContext;
+	var Speaker = require("speaker");
 
 	Pizzicato.context = new AudioContext();
+	Pizzicato.context.pipe(new Speaker());
+	Pizzicato.context.resume();
 
 	var masterGainNode = Pizzicato.context.createGain();
 	masterGainNode.connect(Pizzicato.context.destination);

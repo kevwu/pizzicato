@@ -610,7 +610,7 @@ Pizzicato.Sound.prototype = Object.create(Pizzicato.Events, {
 			this.fadeNode.gain.setValueAtTime(this.fadeNode.gain.value, Pizzicato.context.currentTime);
 			this.fadeNode.gain.linearRampToValueAtTime(0.00001, Pizzicato.context.currentTime + remainingReleaseTime);
 
-			window.setTimeout(function() {
+			setTimeout(function() {
 				stopSound();
 			}, remainingReleaseTime * 1000);
 		}

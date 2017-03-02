@@ -16,6 +16,10 @@
 	"bugs": {
 		"url": "https://github.com/alemangui/pizzicato/issues"
 	},
+	"dependencies": {
+		"speaker": "^0.3.0",
+		"web-audio-engine": "^0.11.0"
+	},
 	"devDependencies": {
 		"gulp": "3.9.1",
 		"gulp-include": "2.1.0",
@@ -39,5 +43,6 @@
 		"web audio",
 		"sound effects"
 	],
-	"main": "./distr/Pizzicato.min.js"
+	"main": "./distr/Pizzicato.min.js",
+	"private": true
 }
